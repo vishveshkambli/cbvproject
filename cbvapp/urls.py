@@ -23,4 +23,5 @@ urlpatterns = [
     
     path('', v.homef),
     path('home', v.homef),
+    path('addemp',v.EmpRegister_View()),
 ]
