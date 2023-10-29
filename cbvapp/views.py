@@ -1,12 +1,23 @@
 from django.shortcuts import render
-from .models import EmpForm #imported for EmpRegister
+from django.views.generic import FormView, CreateView, ListView
+from .models import Emp,EmpForm 
 
 # Create your views here.
-# from django.views.generic import TemplateView
 
 def homef(request):
     return render(request,'home.html')
 
-class EmpRegister(EmpForm):
+class EmpRegister(FormView):
     form_class=EmpForm
     template_name='addemp.html'
+    
+    
+class addEmp(CreateView):
+    model=Emp
+    fields='__all__'
+    success_url='/'
+    
+class elist(ListView):
+    model=Emp
+    template_name='emplist.html'
+

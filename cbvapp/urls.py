@@ -20,8 +20,10 @@ from .import views as v
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    
     path('', v.homef),
     path('home', v.homef),
-    path('addemp',v.EmpRegister_View()),
+    path('addemp',v.EmpRegister.as_view()),
+    path('add',v.addEmp.as_view()),
+    path('elist',v.elist.as_view()),
+    
 ]
